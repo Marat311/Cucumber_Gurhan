@@ -45,32 +45,7 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true));
                     break;
-                case "chrome-remote":
-                    try {
-//                        same thing as ChromeOptions
-//                        To request Selenium Grid to run tests on Chrome
-                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-                        desiredCapabilities.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
-                        desiredCapabilities.setPlatform(Platform.LINUX);
-//                        ChromeOptions chromeOptions = new ChromeOptions();
-                        URL url = new URL("http://3.235.145.39:4444/wd/hub");
-                        driver = new RemoteWebDriver(url, desiredCapabilities);
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-                    break;
-                case "firefox-remote":
-                    try {
-                        //to request grid to run tests on firefox
-                        FirefoxOptions firefoxOptions = new FirefoxOptions();
-                        URL url = new URL("http://3.235.145.39:4444/wd/hub");
-                        driver = new RemoteWebDriver(url, firefoxOptions);
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
 
-                default:
-                    throw new RuntimeException("Wrong browser name: "+browser);
             }
         }
 

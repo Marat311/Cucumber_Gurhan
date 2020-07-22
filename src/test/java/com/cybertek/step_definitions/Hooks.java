@@ -34,12 +34,12 @@ public class Hooks {
         //#2 we are going to attach it into our report: using attach method
         //attach method accepts 3 arguments. #1: Screenshot itself #2: image type #3 current scenario's name
 
-        if (scenario.isFailed()) {
+       // if (scenario.isFailed()) {
 
-            byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", scenario.getName());
+         //   byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+          //  scenario.attach(screenshot, "image/png", scenario.getName());
 
-        }
+       // }
 
     }
 
