@@ -8,7 +8,7 @@ public class ConfigurationReader {
 
     //1- we created properties object
     private static Properties properties = new Properties();
-
+//jkh
 
     static {
         //2- get the path and store in String, or directly pass into fileInputStream obj
