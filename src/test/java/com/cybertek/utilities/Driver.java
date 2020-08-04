@@ -45,6 +45,15 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true));
                     break;
+                case "chrome-remote":
+
+                        try {
+                            ChromeOptions chromeOptions = new ChromeOptions();
+                            URL url = new URL("http://52.86.4.179:4444/wd/hub");
+                            driver = new RemoteWebDriver(url, chromeOptions);
+                        } catch (MalformedURLException e) {
+                            e.printStackTrace();
+                        }
 
             }
         }
